@@ -179,8 +179,10 @@ public class Search extends Fragment implements SearchAdapter.MedicineClicked {
 
     @Override
     public void medicineClicked(int position) {
-        Intent intent=new Intent(getContext(), AfterSearch.class);
-        intent.putExtra("medicine",searchMedicines.get(position).getMedicine_name());
-        startActivity(intent);
+        final NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+        navController.navigate(R.id.action_navigation_search_to_navigation_after_search);
+
+
+
     }
 }

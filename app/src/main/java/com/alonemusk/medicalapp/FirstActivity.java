@@ -1,7 +1,12 @@
 package com.alonemusk.medicalapp;
 
+import android.net.Uri;
 import android.os.Bundle;
 
+import com.alonemusk.medicalapp.ui.Cart.Cart;
+import com.alonemusk.medicalapp.ui.EnterAdress.ItemFragment;
+import com.alonemusk.medicalapp.ui.EnterAdress.dummy.DummyContent;
+import com.alonemusk.medicalapp.ui.Medicine_Result.AfterSearch;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +16,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends AppCompatActivity implements
+        ItemFragment.OnListFragmentInteractionListener, AfterSearch.OnFragmentInteractionListener, Cart.OnFragmentInteractionListener
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,4 +36,13 @@ public class FirstActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

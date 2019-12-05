@@ -82,6 +82,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
                 }
             });
         }
+
     }
     @Override
     public Filter getFilter() {

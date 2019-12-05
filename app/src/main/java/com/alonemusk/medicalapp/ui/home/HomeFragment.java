@@ -20,8 +20,12 @@ import androidx.navigation.Navigation;
 
 import com.alonemusk.medicalapp.FirstActivity;
 import com.alonemusk.medicalapp.R;
+import com.alonemusk.medicalapp.ui.EnterAdress.ItemFragment;
+import com.alonemusk.medicalapp.ui.EnterAdress.dummy.DummyContent;
 
-public class HomeFragment extends Fragment {
+import org.w3c.dom.Text;
+
+public class HomeFragment extends Fragment implements ItemFragment.OnListFragmentInteractionListener {
 
     private HomeViewModel homeViewModel;
 
@@ -40,8 +44,28 @@ public class HomeFragment extends Fragment {
 
             }
         });
+        TextView textView=root.findViewById(R.id.pincode);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_navigation_home_to_adress);
+            }
+        });
+        TextView textView1=root.findViewById(R.id.deliverto);
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_navigation_home_to_adress);
+            }
+        });
+
 
 
         return root;
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 }

@@ -1,4 +1,4 @@
-package com.alonemusk.medicalapp.ui.Search;
+package com.alonemusk.medicalapp.ui.EnterAdress;
 
 
 import android.content.Context;
@@ -10,15 +10,14 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {SearchMedicine.class},version = 5,exportSchema = false)
-
-public abstract class SearchDatabase extends RoomDatabase {
-    private static SearchDatabase instance;
-    public abstract SearchDao searchDao();
-    public static synchronized SearchDatabase getInstance(Context context) {
+@Database(entities = {Note.class},version = 4,exportSchema = false)
+public abstract class NoteDatabase extends RoomDatabase {
+    private static NoteDatabase instance;
+    public abstract NoteDao noteDao();
+    public static synchronized NoteDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
-                    SearchDatabase.class, "note_database")
+                    NoteDatabase.class, "note_database")
                     .fallbackToDestructiveMigration()
                     .addCallback(roomCallBack)
                     .build();
@@ -34,13 +33,14 @@ public abstract class SearchDatabase extends RoomDatabase {
             new populateDbAsyncTask(instance).execute();
         }
     };
-    private static class populateDbAsyncTask extends AsyncTask<Void,Void,Void>{
-        private SearchDao searchDao;
-        private    populateDbAsyncTask(SearchDatabase db){
-            searchDao=db.searchDao();
+    private static class populateDbAsyncTask extends AsyncTask<Void,Void,Void> {
+        private NoteDao noteDao;
+        private    populateDbAsyncTask(NoteDatabase db){
+            noteDao=db.noteDao();
         }
         @Override
         protected Void doInBackground(Void... voids) {
+
 
             return null;
         }

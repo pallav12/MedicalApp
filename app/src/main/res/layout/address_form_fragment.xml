@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".ui.EnterAdress.AddressForm">
+
+    <EditText
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:hint="Adress"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:id="@+id/line2"
+        android:hint="Landmark"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:id="@+id/line3"
+        android:hint="City"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:id="@+id/line4"
+        android:hint="State"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+<Button
+    android:id="@+id/submit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:text="Submit"></Button>
+</LinearLayout>

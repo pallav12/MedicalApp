@@ -26,6 +26,12 @@
         <action
             android:id="@+id/action_navigation_home_to_account"
             app:destination="@id/navigation_account" />
+
+
+        <action
+            android:id="@+id/action_navigation_home_to_adress"
+            app:destination="@id/navigation_adress" />
+
         <action
             android:id="@+id/action_navigation_home_to_navigation_search"
             app:destination="@id/navigation_search"
@@ -59,6 +65,52 @@
         android:label="Account"
         tools:layout="@layout/account_fragment" />
     <fragment
+        android:id="@+id/navigation_adress"
+        android:name="com.alonemusk.medicalapp.ui.EnterAdress.ItemFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_enter_anim"
+        app:popExitAnim="@anim/nav_default_exit_anim"
+        android:label="Address"
+        tools:layout="@layout/fragment_item_list" >
+        <action
+
+            android:id="@+id/action_navigation_home_to_adress_Form"
+            app:destination="@id/navigation_adress_form" />
+        <action
+
+            android:id="@+id/action_navigation_home_to_edit_Form"
+            app:destination="@id/navigation_edit_form" >
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_adress_form"
+        android:name="com.alonemusk.medicalapp.ui.EnterAdress.AddressForm"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_enter_anim"
+        app:popExitAnim="@anim/nav_default_exit_anim"
+        android:label="Address_Form"
+        tools:layout="@layout/address_form_fragment" >
+        <action
+            android:id="@+id/action_navigation_adress_form_to_navigation_adress"
+            app:destination="@id/navigation_adress" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_edit_form"
+        android:name="com.alonemusk.medicalapp.ui.EnterAdress.EditForm"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_enter_anim"
+        app:popExitAnim="@anim/nav_default_exit_anim"
+        android:label="EditForm"
+        tools:layout="@layout/address_form_fragment" >
+        <action
+            android:id="@+id/action_navigation_edit_form_to_navigation_adress"
+            app:destination="@id/navigation_adress" />
+    </fragment>
+    <fragment
         android:id="@+id/navigation_search"
         android:name="com.alonemusk.medicalapp.ui.Search.Search"
         android:label="Account"
@@ -66,5 +118,31 @@
         <action
             android:id="@+id/action_navigation_search_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_after_search"
+            app:destination="@id/navigation_after_search" />
     </fragment>
+    <fragment
+        android:id="@+id/navigation_after_search"
+        android:name="com.alonemusk.medicalapp.ui.Medicine_Result.AfterSearch"
+        android:label="AfterSearch"
+        tools:layout="@layout/fragment_after_search" >
+        <action
+            android:id="@+id/action_navigation_after_search_to_navigation_cart"
+            app:destination="@id/navigation_cart" />
+        <action
+            android:id="@+id/action_navigation_after_search_to_navigation_search"
+            app:destination="@id/navigation_search" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.alonemusk.medicalapp.ui.Cart.Cart"
+        android:label="AfterSearch"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_navigation_cart_to_navigation_after_search"
+            app:destination="@id/navigation_after_search" />
+    </fragment>
+
+
 </navigation>

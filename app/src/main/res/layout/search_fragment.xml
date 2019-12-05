@@ -31,7 +31,10 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginLeft="24dp"
                 android:background="@drawable/circle"
-                android:layout_toRightOf="@id/back"></androidx.appcompat.widget.SearchView>
+                android:layout_toRightOf="@id/back">
+
+
+            </androidx.appcompat.widget.SearchView>
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
     <androidx.recyclerview.widget.RecyclerView
